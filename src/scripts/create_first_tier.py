@@ -2,10 +2,15 @@ import asyncio
 import logging
 
 from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from ..app.core.config import config
-from ..app.core.db.database import AsyncSession, local_session
-from ..app.models.tier import Tier
+from src.app.core.config import config
+from src.app.core.db.database import local_session
+from src.app.models import Tier
+
+# from ..app.core.config import config
+# from ..app.core.db.database import AsyncSession, local_session
+# from ..app.models.tier import Tier
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

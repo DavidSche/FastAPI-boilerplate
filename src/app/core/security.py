@@ -3,7 +3,9 @@ from typing import Any, Literal
 
 import bcrypt
 from fastapi.security import OAuth2PasswordBearer
-from jose import JWTError, jwt
+# from jose import JWTError, jwt
+from jwt.exceptions import InvalidTokenError
+import jwt
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..crud.crud_users import crud_users
@@ -29,6 +31,7 @@ def get_password_hash(password: str) -> str:
     return hashed_password
 
 
+# 验证用户是否合法
 async def authenticate_user(username_or_email: str, password: str, db: AsyncSession) -> dict[str, Any] | Literal[False]:
     if "@" in username_or_email:
         db_user: dict | None = await crud_users.get(db=db, email=username_or_email, is_deleted=False)
@@ -92,7 +95,7 @@ async def verify_token(token: str, db: AsyncSession) -> TokenData | None:
             return None
         return TokenData(username_or_email=username_or_email)
 
-    except JWTError:
+    except InvalidTokenError:
         return None
 
 
