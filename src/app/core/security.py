@@ -47,6 +47,7 @@ async def authenticate_user(username_or_email: str, password: str, db: AsyncSess
     return db_user
 
 
+# 创建令牌操作
 async def create_access_token(data: dict[str, Any], expires_delta: timedelta | None = None) -> str:
     to_encode = data.copy()
     if expires_delta:

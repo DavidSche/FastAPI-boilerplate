@@ -366,7 +366,7 @@ docker run -d \
     postgres
 ```
 
-Such as:
+例如:
 
 ```sh
 docker run -d \
@@ -377,7 +377,7 @@ docker run -d \
     postgres
 ```
 
-#### 4.2.3. Running redis With Docker
+#### 4.2.3. 使用 Docker 运行 redis 
 
 > \[!NOTE\]
 > If you already have a redis running, you may skip this step.
@@ -397,7 +397,7 @@ docker run -d \
 redis:alpine
 ```
 
-Such as
+例如
 
 ```sh
 docker run -d \
@@ -406,7 +406,7 @@ docker run -d \
 redis:alpine
 ```
 
-#### 4.2.4. Running the API
+#### 4.2.4. 运行 API
 
 While in the `root` folder, run to start the application with uvicorn server:
 
@@ -417,7 +417,7 @@ poetry run uvicorn src.app.main:app --reload
 > \[!TIP\]
 > The --reload flag enables auto-reload once you change (and save) something in the project
 
-### 4.3 Creating the first superuser
+### 4.3 创建 the first superuser
 
 #### 4.3.1 Docker Compose
 
@@ -484,7 +484,7 @@ While in the `root` folder, run (after you started the application at least once
 poetry run python -m src.scripts.create_first_superuser
 ```
 
-### 4.3.3 Creating the first tier
+### 4.3.3 创建第一个 tier
 
 > \[!WARNING\]
 > Make sure DB and tables are created before running create_tier (db should be running and the api should run at least once before)

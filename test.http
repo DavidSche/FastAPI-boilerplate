@@ -1,0 +1,40 @@
+# curl -X 'POST'
+#  'http://127.0.0.1:8000/api/v1/login'
+#  -H 'accept: application/json'
+#  -H 'Content-Type: application/x-www-form-urlencoded'
+#  -d 'grant_type=&username=david&password=pass&scope=&client_id=&client_secret='
+POST http://127.0.0.1:8000/api/v1/login
+accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=&username=david&password=pass&scope=&client_id=&client_secret=
+
+###
+
+
+
+
+
+# curl -X 'POST'
+#  'http://127.0.0.1:8000/api/v1/david/post'
+#  -H 'accept: application/json'
+#  -H 'Content-Type: application/json'
+#  -d '{
+#  "title": "This is my post",
+#  "text": "This is the content of my post.",
+#  "media_url": "https://www.postimageurl.com"
+#}'
+POST http://127.0.0.1:8000/api/v1/david/post
+accept: application/json
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYXZpZCIsImV4cCI6MTcyMTM1OTk4NX0.PbAYfDGoj6Hs-yiMRCJjRZM8L9dI4QBLu_yrboU4E6E
+
+
+{
+  "title": "This is my post",
+  "text": "This is the content of my post.",
+  "media_url": "https://www.postimageurl.com"
+}
+
+###
+
